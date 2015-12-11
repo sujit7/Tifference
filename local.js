@@ -16,9 +16,9 @@ app.controller('getTimeController',function($scope){
 		$scope.e = parseInt($scope.e);
 		$scope.f = parseInt($scope.f);
 		
+		//calculating hour and minute difference based on am/pm selection
 		$scope.hdiff = ($scope.c + $scope.f) - ($scope.a + $scope.e);
 		$scope.mdiff = $scope.d - $scope.b;
-		
 		if($scope.mdiff < 0){
 			$scope.mdiff=60+$scope.mdiff;
 			$scope.hdiff--;
@@ -26,9 +26,7 @@ app.controller('getTimeController',function($scope){
 		if($scope.hdiff < 0){
 			$scope.hdiff+=24;
 		}
-		if($scope.c == 12 && $scope.e==0){
-			$scope.f=12;
-		}
+		
 	},true);
 });
 
