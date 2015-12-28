@@ -8,15 +8,16 @@
 <body ng-controller="getTimeController">
 	
 	<div>
-		<div><h5>Start time</h5>
-		<input type="number" placeholder="hh" ng-model="a" min="0" max="12">
-		<input type="number" placeholder="mm" ng-model="b" min="0" max="59">
-		<label for="getInAM"><input type="radio" value="0" name="ampmIn" ng-model="e">AM</label>
-		<label for="getInPM"><input type="radio" value="12" name="ampmIn" ng-model="e">PM</label>
+		<div><h5>Start time <label for="setAsNow1"><input type="checkbox" id="setAsNow1" ng-model="nowChkBox1" ng-change="setNow.one()">Now</label></h5>
+			
+			<input type="number" placeholder="hh" ng-model="a" min="0" max="12">
+			<input type="number" placeholder="mm" ng-model="b" min="0" max="59">
+			<label for="getInAM"><input type="radio" value="0" name="ampmIn" ng-model="e">AM</label>
+			<label for="getInPM"><input type="radio" value="12" name="ampmIn" ng-model="e">PM</label>
 		</div>
 		
 		
-		<div><h5>End time</h5>
+		<div><h5>End time <label for="setAsNow2"><input type="checkbox" id="setAsNow2" ng-model="nowChkBox2" ng-change="setNow.two()">Now</label></h5>
 			<input type="number" placeholder="hh" ng-model="c" min="0" max="12">
 			<input type="number" placeholder="mm" ng-model="d" min="0" max="59">
 			<label for="getInAM"><input type="radio" value="0" name="ampmOut" ng-model="f">AM</label>
@@ -25,6 +26,7 @@
 		
 		<p ng-show="f==0 || f==12">DIFF = {{hdiff}} : {{mdiff}}</p>
 	</div>
+	
 		
 </body>
 </html>
